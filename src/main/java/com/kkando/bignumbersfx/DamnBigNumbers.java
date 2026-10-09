@@ -1,6 +1,5 @@
 package com.kkando.bignumbersfx;
 
-
 public class DamnBigNumbers {
     /**
      * TODO - add "b" to big "a"
@@ -19,7 +18,16 @@ public class DamnBigNumbers {
      * @return DamnBigNumber
      */
     public static DamnBigNumber add(DamnBigNumber a, DamnBigNumber b) {
-        return a;
+        String s = "";
+
+        for (int i = a.getNumStr().length()-1; i > 0; i--) {
+            int digitResult = a.getNumStr().charAt(i)-48+b.getNumStr().charAt(i)-48;
+            // TODO - "1x"
+            s = String.format("%d", digitResult);
+        }
+        DamnBigNumber c = new DamnBigNumber(s);
+
+        return c;
     }
 
     /**
